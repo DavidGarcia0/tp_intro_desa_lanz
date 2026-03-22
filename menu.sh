@@ -45,12 +45,32 @@ do
             fi
         ;;
 
-        3)
+        3) 
+           Ruta_Busqueda1="/$HOME/EPNro1/salida/$FILENAME.txt"
+
+           if [[ -f "$Ruta_Busqueda1" ]]; then 
+            echo"El listado de alumnos ordenados por nro de padron es el siguente: "
+            sort -k 1 -n "$Ruta_Busqueda1"
+
+           else 
+            echo "El archivo NO se encuntra en la carpeta de salida."
+
+           fi 
 
         ;;
 
         4)
+          Ruta_Busqueda2="/$HOME/EPNro1/salida/$FILENAME.txt"
 
+          if [[ -f "$Ruta_Busqueda2" ]]; then 
+           echo"Los 10 alumnos con notas mas alta son:"
+           sort -k 4 -n -r "$Ruta_Busqueda2" | head -n 10
+
+         else 
+          echo "El archivo NO se encuentra en la carpeta, salida"
+
+         fi
+ 
         ;;
 
         5)
