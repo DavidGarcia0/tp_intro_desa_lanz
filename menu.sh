@@ -50,6 +50,7 @@ do
         2)
             if [[ -f "$HOME/EPNro1/consolidar.sh" ]]; then
                 bash $HOME/EPNro1/consolidar.sh &
+                echo "Se procesaron los archivos con éxito, elija otra opción del menú"
             
             else
                 echo "No se encontró el proceso a ejecutar. Seleccioná la opción 1) e intentalo de nuevo."
