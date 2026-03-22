@@ -40,6 +40,10 @@ do
 
             cp consolidar.sh $HOME/EPNro1
 
+            for archivo in fuente/*.txt; do
+                cp "$archivo" $HOME/EPNro1/entrada
+            done
+
             echo "Entorno creado con éxito."
         ;;
 
