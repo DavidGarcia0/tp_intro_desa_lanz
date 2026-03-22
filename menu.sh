@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#Definición del parámetro optativo
+if [[ "$1" == "-d" ]]; then
+    echo "Borrando entorno..."
+    rm -rf "$HOME/EPNro1"
+    pkill -f consolidar.sh
+    exit 0
+fi
+
 # Verificación de la variable FILENAME
 if [[ -z "$FILENAME" ]]; then
     echo "No se encontró la variable FILENAME."
