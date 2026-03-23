@@ -62,11 +62,11 @@ do
 
         3) 
            if [[ -f "$Ruta_Busqueda" ]]; then 
-            echo"El listado de alumnos ordenados por nro de padron es el siguente: "
+            echo "El listado de alumnos ordenados por nro de padrón es el siguente: "
             sort -k 1 -n "$Ruta_Busqueda"
 
            else 
-            echo "El archivo NO se encuntra en la carpeta de salida."
+            echo "El archivo NO se encuentra en la carpeta de salida."
 
            fi 
 
@@ -74,11 +74,11 @@ do
 
         4)
           if [[ -f "$Ruta_Busqueda" ]]; then 
-           echo"Los 10 alumnos con notas mas alta son:"
-           sort -k 4 -n -r "$Ruta_Busqueda" | head -n 10
+           echo "Los 10 alumnos con nota mas alta son:"
+           sort -k 5 -n -r "$Ruta_Busqueda" | head -n 10
 
          else 
-          echo "El archivo NO se encuentra en la carpeta, salida"
+          echo "El archivo NO se encuentra en la carpeta de salida"
 
          fi
  
@@ -87,17 +87,22 @@ do
         5)
         if [[ -f "$Ruta_Busqueda" ]]; then 
            read -p "Ingrese el padrón: " padron
-           grep "^$padron " "$Ruta_Busqueda"
+           
+           if grep -q "^$padron" "$Ruta_Busqueda"; then
+               grep "^$padron" "$Ruta_Busqueda"
+           else
+               echo "No se encontró un alumno con ese padrón"
+           fi
 
          else 
-          echo "El archivo NO se encuentra en la carpeta, salida"
+          echo "El archivo NO se encuentra en la carpeta de salida"
 
          fi
 
         ;;
 
         6)
-
+        echo "Saliendo..."
         exit 0
 
         ;;
